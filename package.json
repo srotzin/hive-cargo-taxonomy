@@ -1,0 +1,60 @@
+{
+  "name": "@hivecivilization/hive-cargo-taxonomy",
+  "version": "1.0.0",
+  "description": "Versioned Cargo Taxonomy registry with semver, JSON Schema validation, and Merkle-root pinning — HiveAttest Claim C17 (USPTO 64/055,601).",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "hive-cargo": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "CHANGELOG.md",
+    "SPEC.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cargo",
+    "taxonomy",
+    "schema",
+    "semver",
+    "merkle",
+    "hive",
+    "compliance"
+  ],
+  "license": "Apache-2.0",
+  "author": "Stephen A. Rotzin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srotzin/hive-cargo-taxonomy.git"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@vitest/coverage-v8": "^3.1.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  }
+}
